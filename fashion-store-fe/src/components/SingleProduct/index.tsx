@@ -14,7 +14,7 @@ const SingleProduct = ({ item }: PropsWithChildren<SingleProductProps>) => {
     <div className="product-container">
       <div className="circle"></div>
       <div className="image">
-        <img src={item.img} alt="" />
+        <img src='/images/popular_products/3.jpg' alt="" />
       </div>
       <div className="info-container">
         <div className="icon">

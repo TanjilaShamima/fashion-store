@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="left">
-        <h1 className="logo">MY STORE</h1>
+        <h1 className="logo">FASHION STORE</h1>
         <div className="description">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

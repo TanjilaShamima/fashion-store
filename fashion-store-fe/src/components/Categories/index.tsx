@@ -1,5 +1,5 @@
 import React from "react";
-import { categoryItems } from "../../data/categories";
+import { categoryItemsData } from "../../data/categories";
 import { categoryType } from "../../utils/dataType";
 import CategoryItems from "./CategoryItems";
 import './Categories.scss'
@@ -7,7 +7,7 @@ import './Categories.scss'
 const Categories = () => {
   const [allCategories, setAllCategories] = React.useState<categoryType[]>([]);
   React.useEffect(() => {
-    setAllCategories(categoryItems);
+    setAllCategories(categoryItemsData);
   }, []);
 
 

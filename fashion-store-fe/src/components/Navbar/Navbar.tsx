@@ -3,6 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./Navbar.scss";
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -12,15 +13,19 @@ const Navbar = () => {
           <div className="language">EN</div>
           <div className="search-container">
             <input />
-            <SearchIcon  style={{color: "gray", fontSize: "16px"}} />
+            <SearchIcon style={{ color: "gray", fontSize: "16px" }} />
           </div>
         </div>
         <div className="center">
-          <h1 className="logo">MY STORE</h1>
+          <h1 className="logo">FASHION STORE</h1>
         </div>
         <div className="right">
-          <div className="menu-item">REGISTER</div>
-          <div className="menu-item">SIGN IN</div>
+          <div className="menu-item">
+            <Link to="/register">REGISTER</Link>
+          </div>
+          <div className="menu-item">
+            <Link to="/login">SIGN IN</Link>
+          </div>
           <div className="menu-item">
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlinedIcon />
