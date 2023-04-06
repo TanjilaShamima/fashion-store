@@ -28,35 +28,35 @@ const Products = (props: Props) => {
     getProducts();
   }, [props.category]);
 
-  React.useEffect(() => {
-    // products.filter(item => Object.keys(props.filters).every(([key, value]) => item[key].includes(value) ))
-    if (props.category) {
-      if (props.filters?.color && props.filters?.size) {
-        console.log("here----------1");
-        setFilterProducts(
-          products.filter(
-            (item) =>
-              props.filters?.color === item.color &&
-              props.filters?.size === item.size
-          )
-        );
-      } else if (props.filters?.color) {
-        console.log("here----------2");
-        setFilterProducts(
-          products.filter((item) => props.filters?.color === item.color)
-        );
-      } else if (props.filters?.size) {
-        console.log("here----------3");
-        setFilterProducts(
-          products.filter((item) => props.filters?.size === item.size)
-        );
-      } else {
-        setFilterProducts(products);
-      }
-    }
+  // React.useEffect(() => {
+  //   products.filter(item => Object.keys(props.filters).every(([key, value]) => item[key].includes(value) ))
+  //   if (props.category) {
+  //     if (props.filters?.color && props.filters?.size) {
+  //       console.log("here----------1");
+  //       setFilterProducts(
+  //         products.filter(
+  //           (item) =>
+  //             props.filters?.color === item.color &&
+  //             props.filters?.size === item.size
+  //         )
+  //       );
+  //     } else if (props.filters?.color) {
+  //       console.log("here----------2");
+  //       setFilterProducts(
+  //         products.filter((item) => props.filters?.color === item.color)
+  //       );
+  //     } else if (props.filters?.size) {
+  //       console.log("here----------3");
+  //       setFilterProducts(
+  //         products.filter((item) => props.filters?.size === item.size)
+  //       );
+  //     } else {
+  //       setFilterProducts(products);
+  //     }
+  //   }
 
-    // eslint-disable-next-line
-  }, [props.category, props.filters]);
+  //   // eslint-disable-next-line
+  // }, [props.category, props.filters]);
 
   React.useEffect(() => {
     if (props.sort === "newest") {
@@ -73,15 +73,16 @@ const Products = (props: Props) => {
     }
   }, [props.sort]);
 
-  console.log("filterProducts====", filterProducts);
-  console.log("products====", products);
-  console.log("sort====", props.sort);
 
   return (
     <div className="products-container">
-      {filterProducts.map((item) => (
-        <SingleProduct item={item} key={item._id} />
-      ))}
+      {props.category
+        ? filterProducts.map((item) => (
+            <SingleProduct item={item} key={item._id} />
+          ))
+        : filterProducts
+            .slice(0, 10)
+            .map((item) => <SingleProduct item={item} key={item._id} />)}
     </div>
   );
 };
