@@ -4,8 +4,10 @@ import "./Navbar.scss";
 import { Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  //const cart = useSelector(state => state.cart);
   return (
     <div className="navbar-container">
       <div className="navbar-wrapper">
