@@ -1,5 +1,14 @@
-const { updateUser, deleteUser, getUserDetails, getAllUserDetails, getUserStarts } = require("../controller/userController");
-const { verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
+const {
+  updateUser,
+  deleteUser,
+  getUserDetails,
+  getAllUserDetails,
+  getUserStarts,
+} = require("../controller/userController");
+const {
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require("../middleware/verifyToken");
 
 const router = require("express").Router();
 
@@ -22,9 +31,5 @@ router.get("/users", verifyTokenAndAdmin, getAllUserDetails);
 /**=========Get User starts============= */
 
 router.get("/starts", verifyTokenAndAdmin, getUserStarts);
-
-
-
-
 
 module.exports = router;

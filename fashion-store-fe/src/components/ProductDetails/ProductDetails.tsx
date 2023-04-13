@@ -5,6 +5,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { useLocation } from "react-router-dom";
 import { productType } from "../../utils/dataType";
 import axios from "axios";
+import { addProduct } from "../../redux/cartRedux";
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -24,7 +25,7 @@ const ProductDetails = () => {
   };
 
   const handleCartAdd = () => {
-    
+    addProduct({product, quantity: quantity, color: color, size: size, })
   }
 
   React.useEffect(() => {

@@ -5,7 +5,7 @@ const {
   findProductById,
   findAllProducts,
 } = require("../controller/productController");
-const { verifyTokenAndAdmin } = require("./verifyToken");
+const { verifyTokenAndAdmin } = require("../middleware/verifyToken");
 
 const router = require("express").Router();
 

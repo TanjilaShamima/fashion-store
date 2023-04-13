@@ -10,7 +10,7 @@ const {
   verifyToken,
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
-} = require("./verifyToken");
+} = require("../middleware/verifyToken");
 
 const router = require("express").Router();
 
